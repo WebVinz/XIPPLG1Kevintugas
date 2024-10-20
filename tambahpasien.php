@@ -11,7 +11,7 @@
         <div class="row mt-3">
             <div class="col-4">
                 <h3>Tambah Data Pasien</h3>
-                <form action="koneksi.php" method="POST">
+                <form action='koneksi.php' method="POST">
                     <div class="form-group">
                         <label for="idPasien">ID Pasien</label>
                         <input type="text" class="form-control mb-3" name="idPasien" placeholder="ID Pasien">

@@ -1,3 +1,8 @@
+<?php
+include 'controller_pasien.php';
+$no = 1;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,18 +71,15 @@
                 </thead>
                 <tbody>
                     <?php
-                    include 'koneksi.php';
-                    $no = 1;
-                    $hasil = $koneksi->query("SELECT * FROM kunjungan");
-                    while ($row = $hasil->fetch_assoc()) {
+                    foreach ($isiTabelKunjungan as $data) {
                     ?>
                     <tr>
                         <td><?= $no++; ?></td>
-                        <td><?= $row['idKunjungan']; ?></td>
-                        <td><?= $row['idPasien']; ?></td>
-                        <td><?= $row['idDokter']; ?></td>
-                        <td><?= $row['tanggal']; ?></td>
-                        <td><?= $row['keluhan']; ?></td>
+                        <td><?= $data['idKunjungan']; ?></td>
+                        <td><?= $data['idPasien']; ?></td>
+                        <td><?= $data['idDokter']; ?></td>
+                        <td><?= $data['tanggal']; ?></td>
+                        <td><?= $data['keluhan']; ?></td>
                         <td>
                             <a href="editkunjungan.php?edit=<?= $row['idKunjungan']; ?>" class="btn btn-warning btn-sm">Edit</a>
                             <a href="#" class="btn btn-danger btn-sm" onclick="return hapus('<?= $row['idKunjungan']; ?>')">Hapus</a>
